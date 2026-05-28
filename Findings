@@ -1,0 +1,45 @@
+# Findings — Controls & Compliance Audit (Botium Toys)
+
+## Controls Assessment Findings
+
+### What Is in Place
+- Firewall — network perimeter is protected against known bad traffic
+- Antivirus software — endpoints are protected from malware
+- Physical security — locks, CCTV, and fire systems protect on-premises assets
+
+### Critical Gaps Identified
+
+#### Access Control
+- No Least Privilege policy — all employees currently have access to customer data, including cardholder information; this massively expands the attack surface
+- No Separation of Duties — no checks prevent any single employee from having unchecked access or control over sensitive systems
+
+#### Data Protection
+- No Encryption — credit card data and PII are stored and transmitted in plaintext; a direct violation of PCI DSS and a critical data exposure risk
+- No Password Policy — no enforced standards for password strength or rotation
+- No Password Management System — no centralised credential management
+
+#### Detection & Response
+- No IDS — the company has zero visibility into active intrusions or anomalous traffic
+- No Backups — no data recovery path exists after ransomware, hardware failure, or accidental deletion
+- No Disaster Recovery Plan — no documented process for restoring operations after an incident
+
+#### Legacy Systems
+- No monitoring or maintenance schedule — legacy systems run unpatched and unobserved; known vulnerabilities may exist and go unaddressed indefinitely
+---
+
+## Compliance Findings
+
+### PCI DSS — All Four Requirements Failing
+The company is non-compliant across every assessed PCI DSS control. Unencrypted card data, unrestricted access, and absent password policies are the primary issues.
+
+### GDPR — Partially Compliant
+- 72-hour breach notification plan exists
+- Privacy policies are documented and enforced
+- E.U. customer data is not adequately secured
+- Data has not been classified or inventoried
+
+### SOC Type 1 & 2 — Mostly Non-Compliant
+- Data integrity controls are in place
+- No user access policies
+- PII/SPII confidentiality not maintained
+- Data access is not restricted to authorized individuals
