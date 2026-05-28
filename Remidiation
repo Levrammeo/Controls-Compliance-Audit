@@ -1,0 +1,99 @@
+# Remediation — Controls & Compliance Audit (Botium Toys)
+
+## Priority 1 — Immediate Action Required
+
+### 1. Implement Least Privilege & Separation of Duties
+Why: All employees currently have access to customer and cardholder data. This violates the principle of least privilege and creates enormous risk — any compromised account can access everything.
+
+Actions:
+- Audit all user accounts and their current access levels
+- Define role-based access profiles (e.g., sales staff should not access payment processing backend)
+- Revoke access that exceeds role requirements
+- Implement separation of duties so no single person controls end-to-end sensitive processes
+
+Framework impact: PCI DSS Requirement 7, SOC access control
+---
+
+### 2. Deploy Encryption
+Why: Unencrypted card data and PII in storage and transit is a direct PCI DSS violation and a critical data exposure risk.
+
+Actions:
+- Encrypt all cardholder data at rest (AES-256 minimum)
+- Enforce TLS 1.2+ for all data in transit
+- Encrypt database fields containing PII
+- Implement key management procedures
+
+Framework impact: PCI DSS Requirements 3 & 4, GDPR Article 32
+---
+
+### 3. Establish Password Policy & Password Management System
+Why: Without enforced standards, weak credentials are an easy entry point for attackers.
+
+Actions:
+- Define minimum password requirements (length, complexity, rotation schedule)
+- Deploy a centralised password manager (e.g., 1Password, Bitwarden for Business)
+- Enforce multi-factor authentication (MFA) for all accounts with access to sensitive data
+- Prohibit password reuse
+
+Framework impact: PCI DSS Requirement 8
+---
+
+## Priority 2 — Address in the Near Term
+
+### 4. Install an Intrusion Detection System (IDS)
+Why: Currently there is no visibility into whether a breach is occurring. Breaches can go undetected for months without an IDS.
+
+Actions:
+- Deploy a network-based IDS (e.g., Snort, Suricata) on critical network segments
+- Configure alerts for anomalous traffic patterns
+- Integrate with a SIEM for centralised log monitoring
+
+Framework impact: SOC availability and security monitoring
+---
+
+### 5. Implement Backups & Disaster Recovery Plan
+Why: A ransomware attack or hardware failure could permanently destroy all business data with no recovery path.
+
+Actions:
+- Implement a 3-2-1 backup strategy (3 copies, 2 different media, 1 offsite)
+- Test backup restoration regularly
+- Document a formal Disaster Recovery Plan (DRP) with RTOs and RPOs defined
+- Assign ownership of DR procedures
+
+Framework impact: SOC availability, general business continuity
+---
+
+### 6. Establish Legacy System Monitoring
+Why: Unmonitored legacy systems running unpatched software are prime exploit targets.
+
+Actions:
+- Inventory all legacy systems currently in use
+- Create a scheduled maintenance and patching calendar
+- Where patching is not possible, implement compensating controls (network isolation, enhanced monitoring)
+- Plan for migration or decommissioning of end-of-life systems
+---
+
+## Priority 3 — Strengthen Compliance Posture
+
+### 7. Classify and Inventory All Data
+Why: GDPR requires that personal data be properly identified and documented. Without a data inventory, it is impossible to enforce access controls or respond to data subject requests.
+
+Actions:
+- Conduct a full data discovery exercise
+- Classify data by sensitivity (public, internal, confidential, restricted)
+- Document where data is stored, processed, and transmitted (data flow mapping)
+- Assign data owners for each classification
+
+Framework impact: GDPR Article 30 (records of processing activities)
+---
+
+### 8. Establish Formal User Access Policies
+Why: SOC 2 requires documented access policies. Without documentation, access decisions are ad hoc and unauditable.
+
+Actions:
+- Draft a formal Access Control Policy document
+- Define provisioning and de-provisioning procedures
+- Establish an access review cycle (e.g., quarterly)
+- Document exceptions process
+
+Framework impact: SOC 2 Trust Services Criteria (CC6)
