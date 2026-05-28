@@ -2,6 +2,7 @@
 
 ## Overview
 This project documents a structured security audit of Botium Toys, a fictional toy company, assessed against industry-standard compliance frameworks. Starting from a scope, goals, and risk assessment report, I evaluated which security controls were in place, identified critical gaps, and mapped those gaps against three regulatory frameworks: PCI DSS, GDPR, and SOC Type 1 & 2
+
 ---
 
 ## Objectives
