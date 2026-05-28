@@ -1,0 +1,54 @@
+# Tools & Frameworks Used — Controls & Compliance Security Audit
+
+## Compliance Frameworks
+
+### PCI DSS — Payment Card Industry Data Security Standard
+Applicability: Botium Toys processes payment card data online, making PCI DSS compliance mandatory.
+
+PCI DSS is a set of security standards designed to protect cardholder data throughout the payment lifecycle. It covers access control, encryption, network security, monitoring, and vulnerability management across 12 core requirements.
+
+Key requirements assessed in this audit:
+- Requirement 3: Protect stored cardholder data
+- Requirement 4: Encrypt transmission of cardholder data
+- Requirement 7: Restrict access to cardholder data by business need-to-know
+- Requirement 8: Identify and authenticate access to system components
+---
+
+### GDPR — General Data Protection Regulation
+Applicability: Botium Toys serves E.U. customers, making GDPR compliance mandatory regardless of where the company is based.
+
+GDPR governs how organisations collect, store, process, and protect the personal data of E.U. residents. Key obligations include data minimisation, security by design, breach notification within 72 hours, and the right to erasure.
+
+Key articles relevant to this audit:
+- Article 5: Principles relating to processing of personal data
+- Article 25: Data protection by design and by default
+- Article 30: Records of processing activities
+- Article 32: Security of processing
+- Article 33: Notification of a personal data breach (72-hour rule)
+---
+
+### SOC Type 1 & 2 — System and Organizations Controls
+Applicability: Botium Toys handles sensitive PII/SPII and must demonstrate appropriate controls over data availability, confidentiality, and integrity.
+
+SOC reports assess the effectiveness of an organisation's internal controls over a service period. SOC 2 is structured around five Trust Services Criteria: Security, Availability, Processing Integrity, Confidentiality, and Privacy.
+
+Key criteria assessed:
+- CC6 (Logical and Physical Access Controls)
+- CC7 (System Operations and Monitoring)
+- A1 (Availability)
+- C1 (Confidentiality)
+---
+
+## Methodology
+
+### Risk Assessment-Driven Approach
+The audit was conducted using a risk assessment report that outlined Botium Toys' asset inventory, existing controls, and identified gaps. Each control was assessed with a binary question: is evidence of this control present?
+
+### Gap Analysis
+Identified gaps were mapped against each framework to determine which regulatory requirements were unmet — forming the basis for prioritised remediation.
+
+### Prioritisation Model
+Recommendations were prioritised by:
+1. Severity of risk — how much damage would exploitation cause?
+2. Regulatory exposure — does the gap constitute a direct compliance violation?
+3. Ease of implementation — quick wins alongside longer-term improvements
